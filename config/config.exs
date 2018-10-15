@@ -15,8 +15,8 @@ config :forecast_project, ForecastProject.Repo,
   database: "forecast_project_repo",
   username: "postgres",
   password: "postgres",
-  hostname: "localhost"
-  migration_timestamps = [type: :utc_datetime]
+  hostname: "localhost",
+  migration_timestamps: [type: :utc_datetime]
 
 config :forecast_project, ecto_repos: [ForecastProject.Repo]
 # This configuration is loaded before any dependency and is restricted

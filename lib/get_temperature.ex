@@ -1,7 +1,8 @@
 defmodule ForecastProject.GetTemperature do
   alias ForecastProject.Weather
+  alias ForecastProject.Repo
 
-  def run do
+  def run() do
     fetch_temp("Tokyo")
     |> save_db
   end
@@ -38,11 +39,13 @@ defmodule ForecastProject.GetTemperature do
     ]
   end
 
-  def save_db([now, temp]) do
-    %{
+  def save_db([_, temp]) do
+    now = DateTime.utc_now()
+    %Weather{
       temperature: temp,
-      updated_at: now
-    }
+      updated_at: now,
+      inserted_at: now
+    } |> Repo.insert
   end
 
   def save_csv(rows) do

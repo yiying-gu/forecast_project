@@ -12,12 +12,12 @@ defmodule ForecastProject.Scheduler do
   end
 
   def handle_info(:work, state) do
-    GetTemperature.run
-    schedule_work() # Reschedule once more
+    GetTemperature.run()
+    schedule_work()
     {:noreply, state}
   end
 
   defp schedule_work() do
-    Process.send_after(self(), :work, 60 * 60 * 1000)
+    Process.send_after(self(), :work, 5 * 1000)
   end
 end
