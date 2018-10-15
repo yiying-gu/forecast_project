@@ -5,14 +5,6 @@ use Mix.Config
 config :forecast_project, ForecastProject.Repo,
   adapter: Ecto.Adapters.Postgres,
   database: "forecast_project_repo",
-  username: "user",
-  password: "pass",
-  hostname: "localhost"
-
-
-config :forecast_project, ForecastProject.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  database: "forecast_project_repo",
   username: "postgres",
   password: "postgres",
   hostname: "localhost",

@@ -45,7 +45,7 @@ defmodule ForecastProject.GetTemperature do
       temperature: temp,
       updated_at: now,
       inserted_at: now
-    } |> Repo.insert
+    }
   end
 
   def save_csv(rows) do

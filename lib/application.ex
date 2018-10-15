@@ -5,8 +5,8 @@ defmodule ForecastProject.Application do
     import Supervisor.Spec, warn: false
 
     children = [
-      worker(ForecastProject.Scheduler, []),
-      supervisor(ForecastProject.Repo, [])
+      supervisor(ForecastProject.Repo, []),
+      worker(ForecastProject.Scheduler, [])
     ]
 
     opts = [strategy: :one_for_one, name: ForecastProject.Supervisor]
